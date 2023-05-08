@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/VinicyosFerreira/aplicacao-de-pagamento.git/static/css/main.8d5d8c12.css",
+    "main.js": "/VinicyosFerreira/aplicacao-de-pagamento.git/static/js/main.58b54a22.js",
+    "index.html": "/VinicyosFerreira/aplicacao-de-pagamento.git/index.html",
+    "main.8d5d8c12.css.map": "/VinicyosFerreira/aplicacao-de-pagamento.git/static/css/main.8d5d8c12.css.map",
+    "main.58b54a22.js.map": "/VinicyosFerreira/aplicacao-de-pagamento.git/static/js/main.58b54a22.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8d5d8c12.css",
+    "static/js/main.58b54a22.js"
+  ]
+}
