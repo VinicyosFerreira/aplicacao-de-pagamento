@@ -4,8 +4,6 @@ export const Container = styled.div`
      display : flex;
      flex-direction : column;
      height : 100%;
-     margin : 0px;
-     padding : 0px;
 `
 export const Usuario = styled.div `
      display : flex;

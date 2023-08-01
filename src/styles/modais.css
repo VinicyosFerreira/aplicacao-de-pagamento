@@ -50,6 +50,7 @@ input, select  {
 
 .message {
     text-align: center;
+    margin-top : 15px;
 }
 
 .receipt {
