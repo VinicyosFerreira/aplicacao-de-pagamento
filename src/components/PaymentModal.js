@@ -1,8 +1,8 @@
 import Modal from 'react-modal'
 import {useState} from 'react'
-import { valueValidate , mask } from './Mascara';
+import { valueValidate , mask } from './Mask';
 
-function ModalPagamento (props) {
+function PaymentModal (props) {
 
     const [valor , setValor] = useState();
     const [selected , setSelected] = useState(1);
@@ -70,7 +70,7 @@ function ModalPagamento (props) {
         ariaHideApp= {false}
         onrequestClose={props.CloseModal} 
         contentLabel = "Modal de pagamento"
-        className = 'modal-pagamento'
+        className = 'payment-modal'
     >
     <button className='close-modal' onClick={props.CloseModal}>X</button>
         <form 
@@ -106,4 +106,4 @@ function ModalPagamento (props) {
   )
 }
 
-export default ModalPagamento
+export default PaymentModal

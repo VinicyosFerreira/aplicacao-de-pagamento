@@ -1,13 +1,13 @@
 import {useState , useEffect} from 'react'
-import {Container , Usuario , Imagem , Dados} from '../styles/EstiloUsuario'
-import { Botao } from '../styles/EstiloUsuario'
+import {Container , User , Image , Data} from '../styles/StyleUsers'
+import { Button } from '../styles/StyleUsers'
 import '../styles/modais.css'
-import ModalPagamento from './ModalPagamento'
-import ModalRecibo from './ModalRecibo'
+import PaymentModal from './PaymentModal'
+import ReceiptModal from './ReceiptModal'
 
-function ListaUsuario () {
+function UserList () {
 
-    const [listaUser , setListaUser] = useState([]);
+    const [userList , setUserList] = useState([]);
     const [idUser , setIdUser] = useState();
     const [isOpen , setIsOpen] = useState(false);
     const [ClickUsuarioName , setClickUsuarioName] = useState();
@@ -15,20 +15,20 @@ function ListaUsuario () {
     const [errorMessage , setErrorMessage] = useState('');
 
     useEffect (() => {
-        obterDados();
+        fetchData();
     } , [])
 
-    async function obterDados() {
+    async function fetchData() {
         const api = 'https://www.mocky.io/v2/5d531c4f2e0000620081ddce'
-        const resposta = await fetch (api);
-        const converterResposta = await resposta.json();
-        setListaUser(converterResposta);
+        const response = await fetch (api);
+        const responseToJson = await response.json();
+        setUserList(responseToJson);
     }
 
-    const openModal = (usuario) => {
+    const openModal = (user) => {
         setIsOpen(true);
-        setClickUsuarioName(usuario.name);
-        setIdUser(usuario.id);
+        setClickUsuarioName(user.name);
+        setIdUser(user.id);
     }
 
     const CloseModal = () =>{
@@ -47,22 +47,22 @@ function ListaUsuario () {
     return(
      <>
         <Container>
-               {listaUser.map((usuario , index) => {
+               {userList.map((user , index) => {
                    return (
-                   <Usuario key={'Usuário-' + index}>
-                      <Imagem src={usuario.img}></Imagem>
-                        <Dados>
-                            <div>Nome do Usuario: {usuario.name}</div>
-                            <span>ID: {usuario.id} - </span>
-                            <span>Username: {usuario.username}</span>
-                        </Dados>
-                      <Botao onClick = {() => openModal(usuario)}>
+                   <User key={'Usuário-' + index}>
+                      <Image src={user.img}></Image>
+                        <Data>
+                            <div>Nome do Usuario: {user.name}</div>
+                            <span>ID: {user.id} - </span>
+                            <span>Username: {user.username}</span>
+                        </Data>
+                      <Button onClick = {() => openModal(user)}>
                             Pagar
-                     </Botao>
-                   </Usuario>
+                     </Button>
+                   </User>
                    )
             })}
-                <ModalPagamento
+                <PaymentModal
                     isOpen = {isOpen}
                     openModal = {openModal}
                     ClickUsuarioName = {ClickUsuarioName}
@@ -72,7 +72,7 @@ function ListaUsuario () {
                     OpenModalReceipt = {OpenModalReceipt}
                 />
 
-                <ModalRecibo
+                <ReceiptModal
                     isOpenReceipt = {isOpenReceipt}
                     CloseModalReceipt = {CloseModalReceipt}
                     errorMessage = {errorMessage}
@@ -82,4 +82,4 @@ function ListaUsuario () {
     )
 }
 
-export default ListaUsuario
+export default UserList

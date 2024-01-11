@@ -1,9 +1,9 @@
-import ListaUsuario from './components/ListaUsuario';
+import UserList from './components/UserList';
 
 function App() {
   return (
     <div>
-      <ListaUsuario/>
+      <UserList/>
     </div>
   );
 }

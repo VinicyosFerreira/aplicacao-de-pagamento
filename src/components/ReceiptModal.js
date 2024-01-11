@@ -1,6 +1,6 @@
 import Modal from 'react-modal'
 
-function ModalRecibo (props) {
+function ReceiptModal (props) {
     return (
         <Modal
             isOpen={props.isOpenReceipt} 
@@ -27,4 +27,4 @@ function ModalRecibo (props) {
     )
 }
 
-export default ModalRecibo
+export default ReceiptModal
